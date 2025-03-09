@@ -12,6 +12,7 @@ import { Linkedin } from "lucide-react";
 import { Github } from "lucide-react";
 import { Facebook } from "lucide-react";
 import { Youtube } from "lucide-react";
+import SubsMail from "./SubsMail";
 
 function Footer() {
   const socialLinks = [
@@ -76,20 +77,7 @@ function Footer() {
           </div>
 
           {/* suscribe */}
-          <div className=" space-y-3">
-            <h1 className="font-bold font-pops text-lg">Subscribe Me</h1>
-            <div className="border-2 flex flex-row justify-between items-center p-1 ">
-              <input
-                type="email"
-                className="font-pops "
-                placeholder="Enter Email"
-              />
-
-              <Button className="bg-gradient-to-r to-indigo-700 from-purple-800">
-                <IoMdSend />
-              </Button>
-            </div>
-          </div>
+          <SubsMail />
         </div>
 
         {/* hr */}
