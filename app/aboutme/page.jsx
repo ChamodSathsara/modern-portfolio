@@ -76,9 +76,11 @@ function page() {
                 className="bg-gradient-to-r to-indigo-700 from-purple-700 cursor-pointer rounded-full flex justify-center items-center"
                 key={item.id}
               >
-                <p className="m-3 font-bold text-white hover:scale-110">
-                  {item.icon}
-                </p>
+                <a href={item.link} target="_blank">
+                  <p className="m-3 font-bold text-white hover:scale-110">
+                    {item.icon}
+                  </p>
+                </a>
               </div>
             ))}
           </div>

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import heroImage from "@/assests/hero.png";
 import { Button } from "../ui/button";
 import DarkHero from "@/assests/heroRm.png";
 
@@ -40,11 +39,15 @@ function Hero() {
         {/* buttons */}
         <div className="flex md:flex-row flex-col  gap-10">
           <Button className="bg-gradient-to-r px-4 py-2 hover:scale-110 duration-200 from-purple-500 to-indigo-600 font-bold cursor-pointer hover:from-purple-400 hover:to-indigo-700 text-white">
-            Hire Me
+            <a href="https://wa.me/qr/WRZ4QPBIWBY5A1" target="_blank">
+              Hire Me
+            </a>
           </Button>
 
           <Button className="bg-gradient-to-r px-4 py-2 hover:scale-110 duration-200 from-purple-500 to-indigo-600 font-bold cursor-pointer hover:from-purple-400 hover:to-indigo-700 text-white">
-            Download CV
+            <a href="myCv.pdf" download="myCv.pdf">
+              Download CV
+            </a>
           </Button>
         </div>
       </div>

@@ -6,21 +6,11 @@ import Link from "next/link";
 import { IoCallOutline } from "react-icons/io5";
 import { FiMail } from "react-icons/fi";
 import { IoLocation } from "react-icons/io5";
-import { IoMdSend } from "react-icons/io";
-import { Button } from "../ui/button";
-import { Linkedin } from "lucide-react";
-import { Github } from "lucide-react";
-import { Facebook } from "lucide-react";
-import { Youtube } from "lucide-react";
+import { socialLinks } from "../AboutMe/socialLinks";
+
 import SubsMail from "./SubsMail";
 
 function Footer() {
-  const socialLinks = [
-    { id: 1, icon: <Linkedin />, link: "/" },
-    { id: 2, icon: <Github />, link: "/" },
-    { id: 3, icon: <Facebook />, link: "/" },
-    { id: 4, icon: <Youtube />, link: "/" },
-  ];
   return (
     <div className="bg-accent mt-20">
       <div className="container  flex flex-col gap-4 justify-center px-3 items-center">
@@ -56,7 +46,7 @@ function Footer() {
               <p>
                 <IoCallOutline />
               </p>
-              <p>075 880 64 37</p>
+              <p>070 240 25 64</p>
             </div>
 
             {/* email */}
@@ -92,7 +82,9 @@ function Footer() {
                 key={item.id}
                 className="bg-gradient-to-r to-indigo-800 from-purple-800 rounded-full p-2 "
               >
-                <p className="hover:scale-110">{item.icon}</p>
+                <a href={item.link} target="_blank">
+                  <p className="hover:scale-110">{item.icon}</p>
+                </a>
               </div>
             ))}
           </div>

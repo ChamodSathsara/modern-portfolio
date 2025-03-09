@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import aboutPic from "@/assests/aboutme3.png";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 function AboutMe() {
   return (
@@ -36,7 +37,7 @@ function AboutMe() {
           {/* buttons */}
           <div>
             <Button className="bg-gradient-to-r py-2 px-4 hover:scale-110 duration-200 from-purple-500 to-indigo-600 font-bold cursor-pointer hover:from-purple-400 hover:to-indigo-700 text-white">
-              See More
+              <Link href="/aboutme">See More</Link>
             </Button>
           </div>
         </div>

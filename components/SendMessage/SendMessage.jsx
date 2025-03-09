@@ -1,7 +1,6 @@
 "use client";
+import toast, { Toaster } from "react-hot-toast";
 import React, { useState } from "react";
-import { Button } from "../ui/button";
-import { isValid } from "zod";
 
 function SendMessage() {
   const [message, setMessage] = useState({
@@ -11,39 +10,45 @@ function SendMessage() {
     mes: "",
   });
 
-  const isValied = () => {
+  const isValid = () => {
+    console.log(message);
     if (message.fullName.length < 5) {
-      alert("full name lower than 5 carectors");
+      toast.error("minimum 5 characters for name");
       return false;
-    }
-
-    if (message.email.length < 5) {
-      alert("please enter correct email");
+    } else if (message.email.length < 5) {
+      toast.error("un Correct e mail");
       return false;
-    }
-
-    if (message.tel.length < 9) {
-      alert("please enter correct telnum");
+    } else if (message.tel.length < 9) {
+      toast.error("Unorrect Telephone Number");
       return false;
-    }
-
-    if (message.message.length < 10) {
-      alert("full name lower than 10 carectors");
+    } else if (message.mes.length < 10) {
+      toast.error("minimum 11 characters for message");
       return false;
+    } else {
+      return true;
     }
-
-    return true;
   };
 
   const submitMessage = (e) => {
-    isValied();
+    e.preventDefault();
+    const thisValid = isValid();
 
-    if (isValid) {
+    if (thisValid) {
       // logic
+      toast.success("Successfully Sended..!");
+      setMessage({
+        fullName: "",
+        email: "",
+        tel: "",
+        mes: "",
+      });
     } else {
+      //
+      toast.error("Unsuccessfully..!");
     }
   };
   const clearMessage = (e) => {
+    e.preventDefault();
     setMessage({
       fullName: "",
       email: "",
@@ -152,19 +157,20 @@ function SendMessage() {
 
         {/* buttons */}
         <div className="flex justify-between items-center w-full px-10 md:px-28 mt-10">
-          <Button
+          <button
             onClick={clearMessage}
-            className="rounded-none bg-gradient-to-r from-indigo-700 to-purple-700 font-pops"
+            className="rounded-none cursor-pointer bg-gradient-to-r from-indigo-700 text-white px-4 py-2 to-purple-700 font-pops"
           >
             Cansel
-          </Button>
-          <Button
+          </button>
+          <button
             onClick={submitMessage}
-            className="rounded-none bg-gradient-to-r from-indigo-700 to-purple-700 font-pops"
+            className="rounded-none cursor-pointer bg-gradient-to-r from-indigo-700 text-white px-4 py-2 to-purple-700 font-pops"
           >
             Send
-          </Button>
+          </button>
         </div>
+        <Toaster />
       </form>
     </div>
   );

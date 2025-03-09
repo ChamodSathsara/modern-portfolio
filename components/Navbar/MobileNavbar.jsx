@@ -12,6 +12,7 @@ import {
 import { AlignLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { ModeToggle } from "@/components/ModeToggle";
 
 function MobileNavbar({ navLinks }) {
   return (
@@ -34,8 +35,11 @@ function MobileNavbar({ navLinks }) {
             </SheetClose>
           ))}
           <Button className="bg-gradient-to-r m-2 hover:scale-110 duration-200 from-purple-500 to-indigo-600 font-bold cursor-pointer hover:from-purple-400 hover:to-indigo-700 text-white">
-            Hire ME
+            <a href="https://wa.me/qr/WRZ4QPBIWBY5A1" target="_blank">
+              Hire Me
+            </a>
           </Button>
+          <ModeToggle />
         </div>
       </SheetContent>
     </Sheet>
